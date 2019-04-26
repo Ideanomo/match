@@ -149,12 +149,12 @@ window.onload = function() {
             this.background = game.add.tileSprite(0, 0, 610, 361, 'titleScreen');
 
             // Add sound buttons
-            var soundButtonOff = game.add.button(game.width - 100, game.height / 2 - 130, 'soundicons', this.startGame, this);
+            var soundButtonOff = game.add.button(game.width - 100, game.height / 2 - 100, 'soundicons', this.startGame, this);
             var soundButtonOn = game.add.button(game.width - 100, game.height / 2 + 20, 'soundicons', this.startGame, this);
-        soundButtonOff.frame = 1;
-        soundButtonOff.anchor.set(0);
-        soundButtonOn.frame = 0;
-        soundButtonOn.anchor.set(0);
+            soundButtonOff.frame = 1;
+            soundButtonOff.anchor.set(0);
+            soundButtonOn.frame = 0;
+            soundButtonOn.anchor.set(0);
         },
         startGame: function(target) {
             if(target.frame == 0) {
