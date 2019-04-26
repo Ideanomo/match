@@ -139,7 +139,7 @@ window.onload = function() {
             // Preload title screen image
             game.load.image('titleScreen', 'logo-flowers.png');
             // Preload sound icons
-            game.load.spritesheet('soundicons', 'soundicons.png', 50, 50);
+            game.load.spritesheet('soundicons', 'soundicons-2.png', 100, 103);
             },
         create: function() {
             game.stage.disableVisibilityChange = true;
@@ -149,12 +149,12 @@ window.onload = function() {
             this.background = game.add.tileSprite(0, 0, 610, 361, 'titleScreen');
 
             // Add sound buttons
-            var soundButtonOff = game.add.button(game.width - 60, game.height / 2 - 50, 'soundicons', this.startGame, this);
-            var soundButtonOn = game.add.button(game.width - 60, game.height / 2 + 50, 'soundicons', this.startGame, this);
+            var soundButtonOff = game.add.button(game.width - 100, game.height / 2 - 130, 'soundicons', this.startGame, this);
+            var soundButtonOn = game.add.button(game.width - 100, game.height / 2 + 50, 'soundicons', this.startGame, this);
         soundButtonOff.frame = 1;
-        soundButtonOff.anchor.set(0.5);
+        soundButtonOff.anchor.set(0);
         soundButtonOn.frame = 0;
-        soundButtonOn.anchor.set(0.5);
+        soundButtonOn.anchor.set(0);
         },
         startGame: function(target) {
             if(target.frame == 0) {
