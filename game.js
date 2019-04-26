@@ -150,7 +150,7 @@ window.onload = function() {
 
             // Add sound buttons
             var soundButtonOff = game.add.button(game.width - 100, game.height / 2 - 130, 'soundicons', this.startGame, this);
-            var soundButtonOn = game.add.button(game.width - 100, game.height / 2 + 50, 'soundicons', this.startGame, this);
+            var soundButtonOn = game.add.button(game.width - 100, game.height / 2 + 20, 'soundicons', this.startGame, this);
         soundButtonOff.frame = 1;
         soundButtonOff.anchor.set(0);
         soundButtonOn.frame = 0;
