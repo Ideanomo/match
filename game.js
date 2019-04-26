@@ -140,13 +140,23 @@ window.onload = function() {
             game.load.image('titleScreen', 'logo-flowers.png');
             // Preload sound icons
             game.load.spritesheet('soundicons', 'soundicons-2.png', 100, 103);
+            // Preload bee image
+            game.load.image('bee', 'bee.png', 161, 168);
             },
         create: function() {
+            game.scale.pageAlignHorizontally = true;
+            game.scale.pageAlignVertically = true;
+            game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             game.stage.disableVisibilityChange = true;
             // Add stage colour
             game.stage.backgroundColor = "#dbc3c1";
             // Add title screen image
             this.background = game.add.tileSprite(0, 0, 610, 361, 'titleScreen');
+
+            // Add bee
+            bee = game.add.sprite(161, 168, "bee");
+            bee.x = game.width;
+            bee.anchor.set(0.5);
 
             // Add sound buttons
             var soundButtonOff = game.add.button(game.width - 100, game.height / 2 - 100, 'soundicons', this.startGame, this);
@@ -155,6 +165,13 @@ window.onload = function() {
             soundButtonOff.anchor.set(0);
             soundButtonOn.frame = 0;
             soundButtonOn.anchor.set(0);
+        },
+        update: function() {
+            bee.x -=2;
+
+            if(bee.x < -bee.width) {
+                bee.x = game.width;
+            }
         },
         startGame: function(target) {
             if(target.frame == 0) {
